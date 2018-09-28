@@ -18,7 +18,7 @@ const getProductsOfAllIntsExceptAtIndex = function(nums) {
   }
   
   // calculate products of nums after each index - productsAfterIndex
-  var productsAfterIndex = [];
+  const productsAfterIndex = [];
   productSoFar = 1
   for (let j = nums.length - 1; j >= 0; j--) {
     productsAfterIndex[j] = productSoFar;
@@ -26,7 +26,7 @@ const getProductsOfAllIntsExceptAtIndex = function(nums) {
   }
   
   // multiply each num pair of productsBeforeIndex and productsAfterIndex
-  var productsOfAllIntsExceptAtIndex = [];
+  const productsOfAllIntsExceptAtIndex = [];
   for (let k = 0; k <= nums.length - 1; k++) {
     productsOfAllIntsExceptAtIndex[k] = productsBeforeIndex[k] * productsAfterIndex[k];
   }
