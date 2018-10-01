@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/PotatoEater0127/interview-cake#readme",
   "dependencies": {
+    "eslint-plugin-jest": "^21.24.0",
     "jest": "^23.6.0"
   },
   "devDependencies": {
