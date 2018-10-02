@@ -31,6 +31,14 @@ const meetings3 = [
 const merged3 = [
   { startTime: 0, endTime: 12 },
 ];
+
+const meetings4 = [
+  { startTime: 0, endTime: 1 },
+  { startTime: 1, endTime: 3 },
+];
+const merged4 = [
+  { startTime: 0, endTime: 3 },
+];
 test('should merge correctly', () => {
   expect(mergeRanges(meetings1)).toEqual(merged1);
 });
@@ -41,4 +49,8 @@ test('should have the same meetings when no intersections', () => {
 
 test('should return the longer one when one is entirely contained by the other', () => {
   expect(mergeRanges(meetings3)).toEqual(merged3);
+});
+
+test('should merge when meetings have no intersection but touch each other on their boundary', () => {
+  expect(mergeRanges(meetings4)).toEqual(merged4);
 });

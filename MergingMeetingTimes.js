@@ -15,12 +15,9 @@ const mergeRanges = (meetings) => {
   for (let i = 1; i <= meetings.length - 1; i += 1) {
     console.log(mergedMeetings);
     const currentMeeting = meetings[i];
-    const lastIndex = mergedMeetings.length - 1;
-    if (currentMeeting.startTime <= mergedMeetings[lastIndex].endTime) {
-      mergedMeetings[lastIndex] = {
-        startTime: mergedMeetings[lastIndex].startTime,
-        endTime: Math.max(currentMeeting.endTime, mergedMeetings[lastIndex].endTime),
-      };
+    const lastMergedMeeting = mergedMeetings[mergedMeetings.length - 1];
+    if (currentMeeting.startTime <= lastMergedMeeting.endTime) {
+      lastMergedMeeting.endTime = Math.max(currentMeeting.endTime, lastMergedMeeting.endTime);
     } else {
       mergedMeetings.push(currentMeeting);
     }
